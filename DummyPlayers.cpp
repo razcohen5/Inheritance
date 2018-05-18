@@ -26,16 +26,30 @@ const Coordinate YXPlayer :: play(const Board& board) {
     }
 
 }
-const Coordinate IllegalPlayer :: play(const Board& board) {
-    for(int i=0;i<board.size;i++){
-        for(int j=0;j<board.size;j++){
-            if(board.b[i][j]!='.'){
-                const Coordinate c{i,j};
-                return c;
-            }
-        }
-    }
-	return Coordinate(0,0);
+// const Coordinate IllegalPlayer :: play(const Board& board) {
+//     for(int i=0;i<board.size;i++){
+//         for(int j=0;j<board.size;j++){
+//             if(board.b[i][j]!='.'){
+//                 const Coordinate c{i,j};
+//                 return c;
+//             }
+//         }
+//     }
+// 	return Coordinate(0,0);
+// }
+const Coordinate IllegalPlayer::play(const Board& board) {
+	char charOfOtherPlayer = (
+		c=='X'? 'O': 'X'
+		);
+	for (int y=0; y<board.size; ++y) {
+		for (int x=0; x<board.size; ++x) {
+			Coordinate c{x,y};
+			if (board[c]==charOfOtherPlayer) {
+				return c;
+			}
+		}
+	}
+	return {0,0};  // did not find an illegal square - play on the top-left
 }
 const Coordinate ExceptionPlayer :: play(const Board& board) {
         const Coordinate c{board.size+1,board.size+1};
