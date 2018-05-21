@@ -2,9 +2,11 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <fstream>
 #include "Coordinate.h"
 
 using namespace std;
+struct RGB;
 class Bridge;
 class Board;
 class IllegalCharException;
@@ -15,23 +17,34 @@ public:
 	int size;
 	char **b;
 
+	Board();
+	
 	Board(int size);
 
 	Board(const Board& other);
 
 
 	const Bridge operator[](const Coordinate& c);
+
 	const Bridge operator[](const Coordinate& c) const;
+
 	void operator=(char c);
 
-	void deleteBoard();
-
-
 	Board& operator=(const Board& other);
+
+	string draw(int n);
+
+	friend istream& operator >> (istream& in, Board& b);
+
+	friend ostream& operator<< (ostream& os, const Board& b);
+
+	void deleteBoard();
 
 	~Board();
 
 };
+
+
 
 class Bridge
 {
@@ -81,5 +94,9 @@ public:
 	char theChar() const;
 
 };
-
-ostream& operator<< (ostream& os, const Board& b);
+struct RGB {
+  uint8_t red, green, blue;
+  public:
+  RGB() {}
+  RGB(uint8_t red, uint8_t green, uint8_t blue): red(red), green(green), blue(blue) {}
+};
