@@ -119,6 +119,6 @@ Player& TicTacToe:: winner() const
 }
 TicTacToe :: ~TicTacToe()
 {
-	b->deleteBoard();
+	//b->deleteBoard();
 	delete b;
 }
