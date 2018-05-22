@@ -61,7 +61,7 @@
 			cout<<"zarakti 1"<<endl;
 			throw IllegalCoordinateException(c.row,c.col);
 		}
-		else if(b[c.row][c.col]=='O'||b[c.row][c.col]=='X')
+		else if(b[c.row][c.col]!='.')
 		{
 			cout<<"zarakti 2 "<<c.row<<" "<<c.col<<endl;
 			throw IllegalCoordinateException(c.row,c.col);
