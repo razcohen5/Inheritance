@@ -63,7 +63,7 @@
 		}
 		else if(b[c.row][c.col]=='O'||b[c.row][c.col]=='X')
 		{
-			cout<<"zarakti 2"<<endl;
+			cout<<"zarakti 2 "<<c.row<<" "<<c.col<<endl;
 			throw IllegalCoordinateException(c.row,c.col);
 		}		
 		else
