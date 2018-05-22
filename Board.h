@@ -24,7 +24,7 @@ public:
 	Board(const Board& other);
 
 
-	const Bridge operator[](const Coordinate& c);
+	//const Bridge operator[](const Coordinate& c);
 
 	const Bridge operator[](const Coordinate& c) const;
 
