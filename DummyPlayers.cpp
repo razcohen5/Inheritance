@@ -13,7 +13,7 @@ const Coordinate XYPlayer :: play(const Board& board) {
             }
         }
     }
-    return const Coordinate{0,0};
+    return Coordinate{0,0};
 }
 const Coordinate YXPlayer :: play(const Board& board) {
     for(int i=0;i<board.size;i++){
@@ -24,7 +24,7 @@ const Coordinate YXPlayer :: play(const Board& board) {
             }
         }
     }
-    return const Coordinate{0,0};
+    return Coordinate{0,0};
 }
 // const Coordinate IllegalPlayer :: play(const Board& board) {
 //     for(int i=0;i<board.size;i++){
