@@ -56,11 +56,16 @@
 
 	const Bridge Board :: operator[](const Coordinate& c) const
 	{
-		cout<<"const";
 		if(c.row<0||c.col<0||c.row>=size||c.col>=size)
+		{
+			cout<<"zarakti 1"<<endl;
 			throw IllegalCoordinateException(c.row,c.col);
+		}
 		else if(b[c.row][c.col]=='O'||b[c.row][c.col]=='X')
+		{
+			cout<<"zarakti 2"<<endl;
 			throw IllegalCoordinateException(c.row,c.col);
+		}		
 		else
 			return Bridge(this,c.row,c.col);
 	}
