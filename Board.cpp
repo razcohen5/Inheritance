@@ -58,8 +58,8 @@
 	{
 		if(c.row<0||c.col<0||c.row>=size||c.col>=size)
 			throw IllegalCoordinateException(c.row,c.col);
-		// else if(b[c.row][c.col]!='.')
-		// 	throw IllegalCoordinateException(c.row,c.col);	
+		else if(b[c.row][c.col]!='.')
+		 	throw IllegalCoordinateException(c.row,c.col);	
 		else
 			return Bridge(this,c.row,c.col);
 	}
