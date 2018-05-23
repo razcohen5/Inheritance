@@ -5,9 +5,6 @@ public:
 
     Coordinate(int a,int b);
 
-	Coordinate(const Coordinate& other)
-	{
-		row = other.row;
-		col = other.col;
-	}
+	Coordinate(const Coordinate& other);
+
 };

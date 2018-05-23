@@ -3,3 +3,8 @@
 		row=a;
 		col=b;
 	}
+
+		Coordinate :: Coordinate(const Coordinate& other){
+		row = other.row;
+		col = other.col;
+	}
