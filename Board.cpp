@@ -56,12 +56,11 @@
 
 	const Bridge Board :: operator[](const Coordinate& c) const
 	{
-		if(c.row<0||c.col<0||c.row>=size||c.col>=size)
-			throw IllegalCoordinateException(c.row,c.col);
-		else if(b[c.row][c.col]!='.')
-		 	throw IllegalCoordinateException(c.row,c.col);	
-		else
-			return Bridge(this,c.row,c.col);
+		//if(c.row<0||c.col<0||c.row>=size||c.col>=size)
+			//throw IllegalCoordinateException(c.row,c.col);
+		//else if(b[c.row][c.col]!='.')
+		 //	throw IllegalCoordinateException(c.row,c.col);	
+		return Bridge(this,c.row,c.col);
 	}
 
 	void Board :: operator=(char c)
@@ -372,6 +371,10 @@
 	{
 		if(c!='X'&&c!='O'&&c!='.')
 			throw IllegalCharException(c);
+		if(i<0||j<0||i>=bp->size||j>=bp->size)
+			throw IllegalCoordinateException(i,j);
+		if(bp->b[i][j]!='.')
+			throw IllegalCoordinateException(i,j);	
 		bp->b[i][j] = c;
 	}
 

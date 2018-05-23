@@ -24,13 +24,7 @@ void TicTacToe:: play(Player& X, Player& O){
     while(!gameover)
 	{
 		//Player X
-		try
-		{
-			Coordinate Xcor = X.play(*b);
-			//if(b->b[Xcor.row][Xcor.col]!='.')
-				//throw IllegalCoordinateException(Xcor.row,Xcor.col);
-			(*b)[Xcor] = 'X';
-		}
+		try{	(*b)[X.play(*b)]='X';	}
 		catch(const IllegalCoordinateException& i)
 		{
 			winP = &O;
@@ -49,14 +43,7 @@ void TicTacToe:: play(Player& X, Player& O){
 		//Player O
         if(!gameover)
 		{
-       	 	//try{	(*b)[O.play(*b)]='O';	}
-			try
-			{
-				Coordinate Ocor = O.play(*b);
-				//if(b->b[Ocor.row][Ocor.col]!='.')
-					//throw IllegalCoordinateException(Ocor.row,Ocor.col);
-				(*b)[Ocor] = 'O';
-			}
+       	 	try{	(*b)[O.play(*b)]='O';	}
 			catch(const IllegalCoordinateException& i)
 			{
 				winP = &X;

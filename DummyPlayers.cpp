@@ -52,8 +52,7 @@ const Coordinate IllegalPlayer::play(const Board& board) {
 	return {0,0};  // did not find an illegal square - play on the top-left
 }
 const Coordinate ExceptionPlayer :: play(const Board& board) {
-        const Coordinate c{board.size+1,board.size+1};
-            return c;
+    throw IllegalCoordinateException(0,0);
 }
 
 
